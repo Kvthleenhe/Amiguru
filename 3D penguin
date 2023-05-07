@@ -1,0 +1,84 @@
+%face 
+xc = 0;
+yc = 0;
+zc = 0;
+xr = 0.12;
+yr = 0.12;
+zr = 0.1; %not doing anything lol
+[X,Y,Z] = ellipsoid(xc,yc,zc,xr,yr,zr);
+
+%body
+xc1 = 0;
+yc1 = 0;
+zc1 = 0.14;
+xr1 = 0.15;
+yr1 = 0.15; %Should be the same as xr
+zr1 = 0.1; %not doing anything lol
+[X1,Y1,Z1] = ellipsoid(xc1,yc1,zc1,xr1,yr1,zr1);
+
+%mouth
+xc2 = -0.1;
+yc2 = -0.05;
+zc2 = 0.14;
+xr2 = 0.08;
+yr2 = 0.08; %Should be the same as xr
+zr2 = 0.04; %not doing anything lol
+[X2,Y2,Z2] = ellipsoid(xc2,yc2,zc2,xr2,yr2,zr2);
+
+%Left slipper
+xc3 = -0.0806998;
+yc3 = 0.026221;
+zc3 = -0.05;
+xr3 = 0.08; 
+yr3 = 0.08; %Should be the same as xr
+zr3 = 0.04; %not doing anything lol
+[X3,Y3,Z3] = ellipsoid(xc3,yc3,zc3,xr3,yr3,zr3);
+
+
+%Right slipper
+xc4 = -0.0806998;
+yc4 = -0.075;
+zc4 = -0.05;
+xr4 = 0.08;
+yr4 = 0.08; 
+zr4 = 0.04; 
+[X4,Y4,Z4] = ellipsoid(xc4,yc4,zc4,xr4,yr4,zr4);
+
+%Left Wing
+xc5 = -0.025;
+yc5 = 0.09;
+zc5 = -0.01;
+xr5 = -0.01pi;
+yr5 = -0.01pi; 
+zr5 = -0.05pi; %negative numbers don't matter??
+[X5,Y5,Z5] = ellipsoid(xc5,yc5,zc5,xr5,yr5,zr5);
+
+
+
+%Right Wing
+xc6 = 0;
+yc6 = -0.1;
+zc6 = -0.01;
+xr6 = -0.01pi;
+yr6 = -0.01pi; 
+zr6 = -0.05pi; 
+[X6,Y6,Z6] = ellipsoid(xc6,yc6,zc6,xr6,yr6,zr6);
+
+mesh(X,Y,Z)
+axis padded
+hold on 
+mesh(X1,Y1,Z1)
+axis padded
+mesh(X2,Y2,Z2)
+axis padded
+mesh(X3,Y3,Z3)
+axis padded
+mesh(X4,Y4,Z4)
+axis padded
+h = mesh(X5,Y5,Z5);
+rotate(h, [1 0 0], 20); %rotates on 
+axis padded
+h = mesh(X6,Y6,Z6);
+rotate(h,[1 0 0], 340); 
+axis padded
+hold off
